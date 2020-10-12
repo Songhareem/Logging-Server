@@ -10,4 +10,12 @@ export class LogService {
         private elasticSearchAPILog: ElasticSearchAPILog,
         private elasticSearchErrorLog: ElasticSearchErrorLog
     ) {}
+
+    public apiLog(data: IElasticSearchAPILog) {
+        this.elasticSearchAPILog.putLog(data);
+    }
+
+    public errorLog(data: IElasticSearchErrorLog) {
+        this.elasticSearchErrorLog.putLog(data);
+    }
 }
